@@ -6,10 +6,10 @@
 #
 # Simple logging class.
 #
-# Author: Matt Mottram
-#         <m.mottram@sussex.ac.uk>
+# Author: James Waterfield
+#         <j.waterfield@sussex.ac.uk>
 #
-# History:
+# History: 2016/10/21 First Instance
 #
 ###########################################
 
@@ -36,7 +36,7 @@ class TellieLogger:
     """A logger, only ever one.
     """
 
-    ## singleton instance
+    # singleton instance
     _instance = None
 
     class SingletonHelper:
@@ -54,7 +54,7 @@ class TellieLogger:
         """Should always be called from the __main__ function
         of the master script.
         """
-        if not TellieLogger._instance is None:
+        if TellieLogger._instance is not None:
             raise Exception("Only one logger allowed")
         TellieLogger._instance = self
         self._debug_mode = False

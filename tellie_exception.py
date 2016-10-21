@@ -6,14 +6,15 @@
 #
 # Exceptions raised by the tellie modules
 #
-# Author: Matt Mottram
-#         <m.mottram@sussex.ac.uk>
+# Author: James Waterfield
+#         <j.waterfield@sussex.ac.uk>
 #
 # History:
-# 2013/03/08: First instance
+# 2016/10/21: First instance
 #
 ###########################################
 ###########################################
+
 
 class TellieException(Exception):
     """General exception for the Tellie command modules"""

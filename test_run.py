@@ -1,5 +1,6 @@
 import serial_command
 import argparse
+import time
 
 
 if __name__ == '__main__':
