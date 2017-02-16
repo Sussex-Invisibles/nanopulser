@@ -202,6 +202,12 @@ class SerialCommand(object):
         # close the port and reopen?
         time.sleep(3.0)
 
+    def check_firing(self):
+        if self._firing:
+            if _buffer_end_sequence in self.read_buffer():
+                self._firing = False
+        return self._firing
+
     def enable_external_trig(self, while_fire=False):
         """Tell TELLIE to fire on any external trigger.
 
