@@ -78,7 +78,9 @@ class SerialCommand(object):
     def __init__(self, port_name=None):
         """Initialise the serial command"""
         if not port_name:
-            self._port_name = "/dev/ttyUSB0"
+# find portname with: python -m serial.tools.list_ports
+ #           self._port_name = "/dev/ttyUSB0" # linux
+             self._port_name = "COM4"         # windows
         else:
             self._port_name = port_name
         # This is the same as a sleep, but with the advantage of breaking
@@ -91,6 +93,8 @@ class SerialCommand(object):
                                          timeout=self._port_timeout)
             self.logger.debug("Serial connection open: %s" % self._serial)
         except serial.SerialException, e:
+            message = ("Could not find port %s\n Find portname with: "
+                       "python -m serial.tools.list_ports" %(self._port_name))
             raise tellie_exception.TellieSerialException(e)
         # cache current settings - remove need to re-command where possible
         self._current_ph = None

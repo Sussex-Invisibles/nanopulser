@@ -17,10 +17,11 @@ if __name__ == '__main__':
     sc.set_pulse_number(args.pulse_num)
     sc.set_pulse_delay(args.pulse_delay)
     sc.fire()
-    fire = True
-    while fire:
-        if sc.check_firing():
-            pass
-        else:
-            sc.fire()
+    # Make it run continuosly
+#    fire = True
+#    while fire:
+#   if sc.check_firing():
+#     pass
+#   else:
+#     sc.fire()
 
